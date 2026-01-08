@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Greenfield High School — quality education, caring community, modern facilities. Admissions, academics, faculty, events and contact information." />
+  <title>Greenfield High School</title>
+
+  <!-- Basic CSS: Tailored, modern, responsive, accessible -->
+  <style>
+    :root{
+      --primary:#1e88e5;
+      --accent:#ffb300;
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --radius:12px;
+      --max-width:1100px;
+      --fw-regular: 400;
+      --fw-medium: 600;
+      --fw-bold: 700;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
+    a{color:var(--primary);text-decoration:none}
+
+    /* Layout */
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+    header{background:linear-gradient(90deg,#e3f2fd,#fff);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(15,23,42,.06)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#6ec6ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav ul{list-style:none;display:flex;gap:12px;margin:0;padding:0}
+    nav li{padding:6px 10px;border-radius:8px}
+    nav li a{font-weight:600}
+    .cta{background:var(--primary);color:white;padding:8px 12px;border-radius:8px;font-weight:700}
+
+    /* Mobile nav */
+    .menu-btn{display:none;background:none;border:0;padding:8px}
+    .menu-icon{width:22px;height:2px;background:#0f172a;display:block;position:relative}
+    .menu-icon::after,.menu-icon::before{content:"";position:absolute;left:0;width:22px;height:2px;background:#0f172a}
+    .menu-icon::before{top:-7px}
+    .menu-icon::after{top:7px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:38px 0}
+    .hero h1{font-size:2.1rem;margin:0 0 8px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .features{display:flex;gap:10px;flex-wrap:wrap}
+    .feature{background:var(--card);padding:10px 12px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,.05);min-width:160px}
+
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 26px rgba(15,23,42,.05)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    /* Sections */
+    section{padding:36px 0}
+    h2{margin:0 0 14px;font-size:1.25rem}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    /* Faculty list */
+    .teachers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .teacher{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff)}
+    .avatar{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#ffd54f,#ff7043);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+
+    /* Events */
+    .events{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .event{padding:14px;border-radius:10px;border:1px solid rgba(15,23,42,.04);background:linear-gradient(180deg,#fff,#fff)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .gallery img{width:100%;height:130px;object-fit:cover;border-radius:8px;cursor:pointer}
+
+    /* Contact form */
+    form{display:grid;gap:10px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,.08);font-size:0.95rem}
+    button{padding:10px 12px;border-radius:10px;border:0;background:var(--primary);color:white;font-weight:700}
+
+    footer{padding:28px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .teachers{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:700px){
+      .container{padding:16px}
+      nav ul{display:none}
+      .menu-btn{display:block}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:1fr}
+      .teachers{grid-template-columns:1fr}
+    }
+
+    /* Print */
+    @media print{
+      header,footer,.gallery img, .cta {display:none}
+      body{background:white}
+    }
+  </style>
+</head>
+<body>
+  <header aria-label="Site header">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden>GH</div>
+        <div>
+          <div style="font-weight:700">Goverment Polytechnic Gonda</div>
+          <div style="font-size:12px;color:var(--muted)">Learning • Character • Community</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav"><span class="menu-icon" aria-hidden></span></button>
+        <ul id="primaryNav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#faculty">Faculty</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="cta" href="#admissions">Apply Now</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="container">
+      <section class="hero">
+        <div>
+          <h1>Welcome to Goverment Polytechnic Gonda</h1>
+          <p class="lead">A place where curiosity meets opportunity. Strong academics, caring teachers, and extra-curricular programs that build character.</p>
+
+          <div class="features">
+            <div class="feature">🌱 Holistic education</div>
+            <div class="feature">🏫 Modern classrooms</div>
+            <div class="feature">🎨 Arts & sports</div>
+            <div class="feature">🔬 Science labs</div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <a class="cta" href="#admissions">Admissions</a>
+            <a href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-labelledby="quickFacts">
+          <h3 id="quickFacts" style="margin-top:0">Quick Facts</h3>
+          <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+            <li>Established: 1998</li>
+            <li>Students: 1,200+</li>
+            <li>Grades: K - 12</li>
+            <li>Affiliation: State Board</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h2>About Us</h2>
+          <p class="lead">Greenfield High School has a rich tradition of academic excellence and a strong focus on the holistic development of students. Our teachers emphasize critical thinking, collaboration, and lifelong learning.</p>
+          <div class="grid-3" style="margin-top:14px">
+            <div class="card">
+              <strong>Mission</strong>
+              <p style="color:var(--muted);margin:8px 0 0">To nurture confident, responsible and curious learners.</p>
+            </div>
+            <div class="card">
+              <strong>Vision</strong>
+              <p style="color:var(--muted);margin:8px 0 0">A diverse community where every student discovers their potential.</p>
+            </div>
+            <div class="card">
+              <strong>Values</strong>
+              <p style="color:var(--muted);margin:8px 0 0">Respect • Integrity • Excellence</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="admissions">
+        <div class="card">
+          <h2>Admissions</h2>
+          <p class="lead">Admissions are open for the upcoming academic year. Fill the enquiry form, or download the prospectus from the Admissions office.</p>
+          <ol style="color:var(--muted)">
+            <li>Check eligibility and available seats.</li>
+            <li>Visit the campus or book a virtual tour.</li>
+            <li>Submit application and documents.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="academics">
+        <div class="card">
+          <h2>Academics</h2>
+          <p class="lead">We offer a broad curriculum with a strong emphasis on STEM, languages, and arts. Regular assessments and personalized support help each student progress.</p>
+
+          <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px" class="card">
+              <strong>Primary</strong>
+              <p style="color:var(--muted);margin:8px 0 0">Foundational learning with activity-based approach.</p>
+            </div>
+            <div style="flex:1;min-width:220px" class="card">
+              <strong>Middle</strong>
+              <p style="color:var(--muted);margin:8px 0 0">Focus on conceptual understanding and projects.</p>
+            </div>
+            <div style="flex:1;min-width:220px" class="card">
+              <strong>Senior</strong>
+              <p style="color:var(--muted);margin:8px 0 0">Subject specialization and college counselling.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faculty">
+        <h2>Faculty</h2>
+        <p class="lead">Our teachers are experienced, caring, and committed to student success.</p>
+
+        <div class="teachers" aria-live="polite">
+          <div class="teacher">
+            <div class="avatar">AR</div>
+            <div>
+              <strong>Arjun Rao</strong>
+              <div style="color:var(--muted);font-size:13px">Head of Science</div>
+            </div>
+          </div>
+
+          <div class="teacher">
+            <div class="avatar">SM</div>
+            <div>
+              <strong>Sonia Mehta</strong>
+              <div style="color:var(--muted);font-size:13px">Mathematics</div>
+            </div>
+          </div>
+
+          <div class="teacher">
+            <div class="avatar">RK</div>
+            <div>
+              <strong>R. Kumar</strong>
+              <div style="color:var(--muted);font-size:13px">English</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="events">
+        <h2>Upcoming Events</h2>
+        <p class="lead">Join us for events that enrich learning and community.</p>
+
+        <div class="events">
+          <article class="event">
+            <strong>Science Fair</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">January 18, 2026 — Students showcase projects</div>
+          </article>
+
+          <article class="event">
+            <strong>Annual Sports Day</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">February 12, 2026 — All parents invited</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2>Gallery</h2>
+        <p class="lead">Snapshots from campus life.</p>
+        <div class="gallery" role="list">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Students studying" data-src="1">
+          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Science lab" data-src="2">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba7c9b7bfc?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Teachers and students" data-src="3">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="Sports activity" data-src="4">
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card">
+          <h2>Contact</h2>
+          <p class="lead">Have questions? Send us a message or visit the school office.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
+            <form id="contactForm" novalidate>
+              <label for="name">Name</label>
+              <input id="name" name="name" required placeholder="Your name" />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+
+              <button type="submit">Send message</button>
+              <div id="formMsg" style="color:var(--muted);font-size:13px;margin-top:8px"></div>
+            </form>
+
+            <aside style="padding:8px;align-self:start" aria-label="Contact info">
+              <div style="margin-bottom:10px"><strong>Address</strong><div style="color:var(--muted)">12 Green Lane, Citysville</div></div>
+              <div style="margin-bottom:10px"><strong>Phone</strong><div style="color:var(--muted)">+91 98765 43210</div></div>
+              <div style="margin-bottom:10px"><strong>Email</strong><div style="color:var(--muted)">govpolytechnicgonda.edu</div></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <div style="font-size:14px">© Goverment Polytechnic Gonda — All rights reserved</div>
+      <div style="color:var(--muted)">Follow us: <a href="#">Facebook</a> • <a href="#">Instagram</a></div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS: navigation toggle, simple form handling, gallery modal -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const primaryNav = document.getElementById('primaryNav');
+    menuBtn.addEventListener('click', ()=>{
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      if(primaryNav.style.display === 'flex'){
+        primaryNav.style.display = '';
+      } else {
+        primaryNav.style.display = 'flex';
+        primaryNav.style.flexDirection = 'column';
+        primaryNav.style.background = 'transparent';
+        primaryNav.style.position = 'absolute';
+        primaryNav.style.right = '20px';
+        primaryNav.style.top = '64px';
+        primaryNav.style.padding = '10px';
+      }
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if(href.length > 1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile menu after click
+          if(window.innerWidth < 700){
+            primaryNav.style.display = '';
+            menuBtn.setAttribute('aria-expanded','false');
+          }
+        }
+      });
+    });
+
+    // Contact form: client-side validation + UX message (no backend)
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    contactForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
+      if(!name || !email || !message){
+        formMsg.textContent = 'Please fill all fields.';
+        return;
+      }
+      // simple email check
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+        formMsg.textContent = 'Please provide a valid email address.';
+        return;
+      }
+      // simulate success
+      formMsg.style.color = 'green';
+      formMsg.textContent = 'Thanks! Your message has been recorded. We will contact you soon.';
+      contactForm.reset();
+    });
+
+    // Gallery: open images in a simple modal
+    const imgs = document.querySelectorAll('.gallery img');
+    let modal;
+    imgs.forEach(img => img.addEventListener('click', ()=>{
+      if(modal) document.body.removeChild(modal);
+      modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.inset = 0;
+      modal.style.background = 'rgba(2,6,23,.7)';
+      modal.style.display = 'flex';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.zIndex = 2000;
+      modal.addEventListener('click', ()=> document.body.removeChild(modal));
+
+      const imgEl = document.createElement('img');
+      imgEl.src = img.src;
+      imgEl.alt = img.alt;
+      imgEl.style.maxWidth = '92%';
+      imgEl.style.maxHeight = '86%';
+      imgEl.style.borderRadius = '10px';
+      imgEl.style.boxShadow = '0 18px 60px rgba(2,6,23,.6)';
+      modal.appendChild(imgEl);
+      document.body.appendChild(modal);
+    }));
+
+    // Accessibility: reduce motion if user prefers it
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
+</body>
+</html>
+
